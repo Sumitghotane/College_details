@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSAB Vacancy Directory</title>
+    <title>CSAB Vacancy Directory - Other Colleges</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
-    />
     />
     <style>
       *,
@@ -36,7 +35,6 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
       body {
@@ -50,6 +48,34 @@
       .container {
         max-width: 1400px;
         margin: 0 auto;
+      }
+
+      /* Top Navigation / Action Bar */
+      .top-nav {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        color: #ffffff;
+        text-decoration: none;
+        padding: 0.8rem 1.6rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+        transition: all 0.3s ease;
+      }
+
+      .btn-nav:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        background: linear-gradient(135deg, #4f46e5, #4338ca);
       }
 
       header {
@@ -77,14 +103,14 @@
       }
 
       .apology-subtext strong {
-        color: #f472b6; /* Pink highlighted text */
+        color: #f472b6;
         font-weight: 600;
       }
 
       .personal-note {
         display: inline-block;
         background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(244, 114, 182, 0.35); /* Subtle pink border */
+        border: 1px solid rgba(244, 114, 182, 0.35);
         border-radius: 16px;
         padding: 1rem 1.8rem;
         max-width: 700px;
@@ -108,11 +134,6 @@
         font-style: normal;
         color: #ffffff;
         font-weight: 700;
-      }
-
-      header p {
-        color: var(--text-muted);
-        font-size: 1.1rem;
       }
 
       .controls {
@@ -174,27 +195,6 @@
         box-shadow:
           0 10px 25px rgba(0, 0, 0, 0.4),
           0 0 20px var(--accent-glow);
-      }
-
-      .logo-container {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
-        border-radius: 50%;
-        background: #ffffff;
-        border: 2px solid var(--card-border);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 6px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-      }
-
-      .logo-container img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
       }
 
       .card-info {
@@ -428,48 +428,22 @@
   </head>
   <body>
     <div class="container">
+      <!-- Top Most Navigation Button -->
+      <div class="top-nav">
+        <a href="index.html" class="btn-nav">← Back to Main Directory</a>
+      </div>
+
       <header>
-        <h1>Please Forgive Me (A very big pink rose)</h1>
+        <h1>CSAB Vacancies — Other Colleges</h1>
         <p class="apology-subtext">
-          I built this so you can make your CSAB list much faster and
-          stress-free. You can easily check seat counts, quotas, and
-          <strong>female-only seats</strong> for each college!
+          Explore vacancies for GFTIs, IIEST Shibpur, and other participating institutes.
         </p>
 
         <div class="personal-note">
           <p>
-            I hope this helps take away some of the counseling stress.
-            <em
-              >Please, please forgive me for my yestarday actions —lots of pink
-              roses from your <strong>Giraffe 🦒</strong></em
-            >
+            Checking other institutes for additional opportunities! 
+            <em>Keep building your preferences with ease — 🦒</em>
           </p>
-          <div
-            style="
-              display: flex;
-              justify-content: flex-end;
-              margin-bottom: 1.5rem;
-            "
-          >
-            <a
-              href="other_college.html"
-              style="
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                background: linear-gradient(135deg, #ec4899, #8b5cf6);
-                color: #ffffff;
-                text-decoration: none;
-                padding: 0.8rem 1.6rem;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 0.95rem;
-                box-shadow: 0 4px 15px rgba(236, 72, 153, 0.35);
-                transition: all 0.3s ease;
-              "
-              >Other Colleges ➔</a
-            >
-          </div>
         </div>
       </header>
 
@@ -490,9 +464,6 @@
     <div id="detailsModal" class="modal-overlay">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="logo-container">
-            <img id="modalLogo" src="" alt="Logo" />
-          </div>
           <div>
             <span id="modalCode" class="code-badge"></span>
             <h2
@@ -508,72 +479,35 @@
     </div>
 
     <script>
-      // Logo Path Base Folder
-      const LOGO_BASE_PATH = "/images/logos/";
-
-      const targetCodes = new Set([
-        "301",
-        "302",
-        "303",
-        "304",
-        "305",
-        "306",
-        "307",
-        "308",
-        "309",
-        "310",
-        "311",
-        "313",
-        "314",
-        "315",
-        "316",
-        "317",
-        "318",
-        "319",
-        "320",
-        "321",
-        "322",
-        "323",
-        "324",
-        "325",
-        "326",
-        "327",
-        "420",
-        "424",
-        "201",
-        "202",
-        "203",
-        "204",
-        "205",
-        "206",
-        "207",
-        "208",
-        "209",
-        "210",
-        "211",
-        "212",
-        "213",
-        "214",
-        "215",
-        "216",
-        "217",
-        "218",
-        "219",
-        "220",
-        "221",
-        "222",
-        "223",
-        "224",
-        "225",
-        "226",
-        "227",
-        "228",
-        "229",
-        "230",
-        "231",
+      // College Codes corresponding to IIEST Shibpur and GFTIs (232, 401, 402, etc.)
+      const otherCollegeCodes = new Set([
+        "232",
+        "401",
+        "402",
+        "403",
+        "404",
+        "405",
+        "406",
+        "407",
+        "408",
+        "409",
+        "410",
+        "411",
+        "412",
+        "413",
+        "414",
+        "415",
+        "416",
+        "417",
+        "418",
+        "419",
+        "421",
+        "422",
+        "423",
+        "425",
+        "426",
+        "427"
       ]);
-
-      const fallbackLogo = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="%2394a3b8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.5M4.5 21V10.5" /></svg>`;
 
       let aggregatedInstitutes = new Map();
 
@@ -601,9 +535,9 @@
           const code = String(item["Institute Code"]).trim();
           const quota = String(item["Quota"]).trim().toUpperCase();
 
-          // INCLUDES: HS (Home State), OS (Other State), and AI (All India for IIITs)
+          // Matches institutes listed in otherCollegeCodes for HS, OS, and AI quotas
           if (
-            targetCodes.has(code) &&
+            otherCollegeCodes.has(code) &&
             (quota === "HS" || quota === "OS" || quota === "AI")
           ) {
             if (!aggregatedInstitutes.has(code)) {
@@ -658,12 +592,7 @@
           card.className = "institute-card";
           card.onclick = () => openModal(inst.code);
 
-          const logoPath = `${LOGO_BASE_PATH}${inst.code}.png`;
-
           card.innerHTML = `
-          <div class="logo-container">
-            <img src="${logoPath}" alt="${inst.code} Logo" onerror="this.onerror=null; this.src='${fallbackLogo}';" />
-          </div>
           <div class="card-info">
             <span class="code-badge">CODE: ${inst.code}</span>
             <div class="institute-name">${inst.name}</div>
@@ -686,12 +615,6 @@
         document.getElementById("modalTitle").innerText = inst.name;
         document.getElementById("modalCode").innerText = `CODE: ${inst.code}`;
 
-        const logoImg = document.getElementById("modalLogo");
-        logoImg.src = `${LOGO_BASE_PATH}${inst.code}.png`;
-        logoImg.onerror = function () {
-          this.src = fallbackLogo;
-        };
-
         const body = document.getElementById("modalBody");
         body.innerHTML = "";
 
@@ -711,7 +634,7 @@
           "os-title",
         );
 
-        // 3. All India (AI) Seats (For IIITs)
+        // 3. All India (AI) Seats
         renderQuotaSection(
           body,
           "All India (AI Quota)",

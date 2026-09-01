@@ -1,791 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSAB Vacancy Directory</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
-    />
-    />
-    <style>
-      *,
-      *::before,
-      *::after {
-        font-family: "Roboto Mono", monospace !important;
-      }
-      :root {
-        --bg-gradient: linear-gradient(
-          135deg,
-          #0f172a 0%,
-          #1e1b4b 50%,
-          #0f172a 100%
-        );
-        --card-bg: rgba(255, 255, 255, 0.05);
-        --card-border: rgba(255, 255, 255, 0.12);
-        --accent-color: #6366f1;
-        --accent-glow: rgba(99, 102, 241, 0.4);
-        --text-main: #f8fafc;
-        --text-muted: #94a3b8;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITR Filing Due Date 2026 | Omkar Kharade & Co.</title>
+  <meta name="description" content="Interactive ITR filing deadline guide for Individuals and HUFs — ITR-3 and ITR-4." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="brand-mark">CA</div>
+      <div>
+        <strong>Omkar Kharade & Co.</strong>
+        <span>CHARTERED ACCOUNTANTS</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#deadline">Deadline</a>
+      <a href="#eligibility">Who should file?</a>
+      <a href="#compare">ITR-3 vs ITR-4</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="tel:+918975333401">Call now</a>
+  </header>
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background: var(--bg-gradient);
-        color: var(--text-main);
-        min-height: 100vh;
-        padding: 2.5rem 1rem;
-        font-family: "Roboto Mono", monospace !important;
-      }
-
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      header {
-        text-align: center;
-        margin-bottom: 2.5rem;
-        padding: 0 1rem;
-        font-family: "Roboto Mono", monospace;
-      }
-
-      header h1 {
-        font-size: 2.2rem;
-        font-weight: 700;
-        background: linear-gradient(to right, #a5b4fc, #cbd5e1);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 0.8rem;
-      }
-
-      .apology-subtext {
-        color: #cbd5e1;
-        font-size: 0.95rem;
-        max-width: 750px;
-        margin: 0 auto 1.4rem auto;
-        line-height: 1.6;
-      }
-
-      .apology-subtext strong {
-        color: #f472b6; /* Pink highlighted text */
-        font-weight: 600;
-      }
-
-      .personal-note {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(244, 114, 182, 0.35); /* Subtle pink border */
-        border-radius: 16px;
-        padding: 1rem 1.8rem;
-        max-width: 700px;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 0 15px rgba(244, 114, 182, 0.1);
-      }
-
-      .personal-note p {
-        color: #e2e8f0;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin: 0;
-      }
-
-      .personal-note em {
-        font-style: italic;
-        color: #fbcfe8;
-      }
-
-      .personal-note strong {
-        font-style: normal;
-        color: #ffffff;
-        font-weight: 700;
-      }
-
-      header p {
-        color: var(--text-muted);
-        font-size: 1.1rem;
-      }
-
-      .controls {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-      }
-
-      .search-input {
-        width: 100%;
-        max-width: 500px;
-        padding: 0.9rem 1.4rem;
-        border-radius: 50px;
-        border: 1px solid var(--card-border);
-        background: rgba(15, 23, 42, 0.6);
-        color: #fff;
-        font-size: 1rem;
-        outline: none;
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-      }
-
-      .search-input:focus {
-        border-color: var(--accent-color);
-        box-shadow: 0 0 15px var(--accent-glow);
-      }
-
-      .card-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
-
-      @media (max-width: 900px) {
-        .card-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .institute-card {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 16px;
-        padding: 1.25rem 1.5rem;
-        backdrop-filter: blur(12px);
-        display: flex;
-        align-items: center;
-        gap: 1.25rem;
-        cursor: pointer;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease,
-          border-color 0.3s ease;
-      }
-
-      .institute-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--accent-color);
-        box-shadow:
-          0 10px 25px rgba(0, 0, 0, 0.4),
-          0 0 20px var(--accent-glow);
-      }
-
-      .logo-container {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
-        border-radius: 50%;
-        background: #ffffff;
-        border: 2px solid var(--card-border);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 6px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-      }
-
-      .logo-container img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-
-      .card-info {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-      }
-
-      .code-badge {
-        align-self: flex-start;
-        background: linear-gradient(135deg, #4f46e5, #7c3aed);
-        color: #fff;
-        font-size: 0.75rem;
-        font-weight: 700;
-        padding: 0.2rem 0.6rem;
-        border-radius: 20px;
-      }
-
-      .institute-name {
-        font-size: 1.05rem;
-        font-weight: 600;
-        line-height: 1.35;
-        color: #f1f5f9;
-      }
-
-      .click-hint {
-        font-size: 0.75rem;
-        color: #818cf8;
-        margin-top: 2px;
-      }
-
-      .vacancy-box {
-        min-width: 110px;
-        background: rgba(16, 185, 129, 0.12);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        border-radius: 12px;
-        padding: 0.6rem 0.8rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .vacancy-label {
-        font-size: 0.65rem;
-        color: #34d399;
-        text-transform: uppercase;
-        font-weight: 700;
-      }
-
-      .vacancy-count {
-        font-size: 1.4rem;
-        font-weight: 800;
-        color: #10b981;
-      }
-
-      /* Modal Styling */
-      .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 23, 42, 0.85);
-        backdrop-filter: blur(8px);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        padding: 1rem;
-      }
-
-      .modal-content {
-        background: #1e1b4b;
-        border: 1px solid var(--card-border);
-        border-radius: 20px;
-        width: 100%;
-        max-width: 900px;
-        max-height: 85vh;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-        animation: zoomIn 0.3s ease-out;
-      }
-
-      .modal-header {
-        padding: 1.5rem;
-        border-bottom: 1px solid var(--card-border);
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-        position: relative;
-      }
-
-      .close-btn {
-        position: absolute;
-        top: 1.2rem;
-        right: 1.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: #fff;
-        font-size: 1.5rem;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.2s ease;
-      }
-
-      .close-btn:hover {
-        background: rgba(239, 68, 68, 0.6);
-      }
-
-      .modal-body {
-        padding: 1.5rem;
-        overflow-y: auto;
-      }
-
-      /* State / Quota Titles */
-      .state-section {
-        margin-bottom: 2rem;
-      }
-
-      .state-title {
-        font-size: 1.1rem;
-        font-weight: 700;
-        padding: 0.4rem 0.8rem;
-        border-radius: 8px;
-        display: inline-block;
-        margin-bottom: 1rem;
-      }
-
-      .hs-title {
-        background: rgba(99, 102, 241, 0.2);
-        color: #a5b4fc;
-        border: 1px solid rgba(99, 102, 241, 0.4);
-      }
-
-      .os-title {
-        background: rgba(56, 189, 248, 0.2);
-        color: #38bdf8;
-        border: 1px solid rgba(56, 189, 248, 0.4);
-      }
-
-      .ai-title {
-        background: rgba(236, 72, 153, 0.2);
-        color: #f472b6;
-        border: 1px solid rgba(236, 72, 153, 0.4);
-      }
-
-      .branch-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        margin-bottom: 1rem;
-        padding: 1rem;
-      }
-
-      .branch-name {
-        font-weight: 600;
-        font-size: 1rem;
-        color: #f8fafc;
-        margin-bottom: 0.8rem;
-        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-        padding-bottom: 0.4rem;
-      }
-
-      .pool-block {
-        margin-top: 0.6rem;
-      }
-
-      .pool-title {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #cbd5e1;
-        margin-bottom: 0.4rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .category-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        gap: 0.6rem;
-        margin-bottom: 0.8rem;
-      }
-
-      .cat-badge {
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid var(--card-border);
-        border-radius: 8px;
-        padding: 0.4rem 0.6rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .cat-name {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-      }
-
-      .cat-val {
-        font-weight: 700;
-        font-size: 0.9rem;
-        color: #34d399;
-      }
-
-      .status-msg {
-        text-align: center;
-        font-size: 1.2rem;
-        color: var(--text-muted);
-        margin-top: 3rem;
-      }
-
-      @keyframes zoomIn {
-        from {
-          transform: scale(0.9);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>Please Forgive Me (A very big pink rose)</h1>
-        <p class="apology-subtext">
-          I built this so you can make your CSAB list much faster and
-          stress-free. You can easily check seat counts, quotas, and
-          <strong>female-only seats</strong> for each college!
-        </p>
-
-        <div class="personal-note">
-          <p>
-            I hope this helps take away some of the counseling stress.
-            <em
-              >Please, please forgive me for my yestarday actions —lots of pink
-              roses from your <strong>Giraffe 🦒</strong></em
-            >
-          </p>
-          <div
-            style="
-              display: flex;
-              justify-content: flex-end;
-              margin-bottom: 1.5rem;
-            "
-          >
-            <a
-              href="other_college.html"
-              style="
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                background: linear-gradient(135deg, #ec4899, #8b5cf6);
-                color: #ffffff;
-                text-decoration: none;
-                padding: 0.8rem 1.6rem;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 0.95rem;
-                box-shadow: 0 4px 15px rgba(236, 72, 153, 0.35);
-                transition: all 0.3s ease;
-              "
-              >Other Colleges ➔</a
-            >
-          </div>
+  <main>
+    <section class="hero" id="deadline">
+      <div class="hero-copy">
+        <div class="eyebrow">INCOME TAX RETURN • FY 2025–26</div>
+        <h1>File your taxes with confidence.<br><em></em></h1>
+        <p class="hero-lead">Simple and reliable ITR filing assistance for salaried individuals, professionals, freelancers, and businesses.
+</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#eligibility">Check your ITR type <span>→</span></a>
+          <a class="btn ghost" href="#compare">Compare ITR-3 & ITR-4</a>
         </div>
-      </header>
-
-      <div class="controls">
-        <input
-          type="text"
-          id="searchInput"
-          class="search-input"
-          placeholder="Search by institute name or code..."
-        />
       </div>
 
-      <div id="cardGrid" class="card-grid"></div>
-      <div id="statusMessage" class="status-msg">Loading JSON Data...</div>
-    </div>
+      <div class="deadline-card">
+        <div class="calendar-top">DUE DATE</div>
+        <div class="calendar-body">
+          <span class="calendar-day">31<sup>ST</sup></span>
+          <span class="calendar-month">AUGUST</span>
+          <span class="calendar-year">2026</span>
+        </div>
+        <div class="calendar-foot">Individuals & HUFs • Business / Profession</div>
+      </div>
+    </section>
 
-    <!-- Modal Window -->
-    <div id="detailsModal" class="modal-overlay">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="logo-container">
-            <img id="modalLogo" src="" alt="Logo" />
-          </div>
+    <section class="status-strip">
+      <div class="status-icon">✓</div>
+      <div>
+        <strong>31 August 2026</strong>
+        <span>Standard due date shown in the reference notice</span>
+      </div>
+      <div class="status-note">Companies have a different due date.</div>
+    </section>
+
+    <section class="countdown-section">
+      <div>
+        <div class="section-kicker">DEADLINE TRACKER</div>
+        <h2>Know where you stand.</h2>
+        <p id="deadlineMessage">Checking the filing deadline…</p>
+      </div>
+      <div class="countdown" id="countdown">
+        <div><b id="days">00</b><span>Days</span></div>
+        <div><b id="hours">00</b><span>Hours</span></div>
+        <div><b id="minutes">00</b><span>Minutes</span></div>
+        <div><b id="seconds">00</b><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="eligibility">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">WHO SHOULD FILE?</div>
+          <h2>Find the form that fits your income.</h2>
+        </div>
+        <p>Use the interactive cards below to review the conditions from the notice.</p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="itr3">ITR-3 <small>Business / Profession</small></button>
+        <button class="tab" data-tab="itr4">ITR-4 <small>Presumptive Income</small></button>
+      </div>
+
+      <div class="tab-panels">
+        <article class="form-panel active" id="itr3">
+          <div class="panel-badge">ITR-3</div>
           <div>
-            <span id="modalCode" class="code-badge"></span>
-            <h2
-              id="modalTitle"
-              class="institute-name"
-              style="font-size: 1.2rem; margin-top: 4px"
-            ></h2>
+            <h3>For Business / Profession</h3>
+            <p>Applicable to Individuals & HUFs having income from any of the following:</p>
+            <ul class="feature-list">
+              <li>Business or Profession — proprietorship, partnership firm, LLP</li>
+              <li>Presumptive Business Income — Section 44AD, 44ADA, 44AE</li>
+              <li>Income from Capital Gains</li>
+              <li>Income from More than One House Property</li>
+              <li>Foreign Assets / Foreign Income</li>
+              <li>Income from other sources — interest, dividend, etc.</li>
+              <li>Expenditure other than interest exceeding ₹2,00,000</li>
+              <li>Total Income exceeds the Basic Exemption Limit</li>
+            </ul>
           </div>
-          <button class="close-btn" onclick="closeModal()">&times;</button>
-        </div>
-        <div id="modalBody" class="modal-body"></div>
+        </article>
+
+        <article class="form-panel" id="itr4">
+          <div class="panel-badge green">ITR-4</div>
+          <div>
+            <h3>For Presumptive Income</h3>
+            <p>Applicable to Individuals & HUFs satisfying the relevant presumptive-income conditions:</p>
+            <ul class="feature-list">
+              <li>Presumptive Business under Section 44AD, 44ADA or 44AE</li>
+              <li>Total Turnover / Gross Receipts up to ₹2 Crore</li>
+              <li>₹3 Crore in case of 44AD as per new tax-regime conditions</li>
+              <li>No Income from Capital Gains</li>
+              <li>No Income from more than one House Property</li>
+              <li>No Foreign Assets / Foreign Income</li>
+              <li>Income from other sources, if any, within the permissible limit</li>
+            </ul>
+          </div>
+        </article>
       </div>
+    </section>
+
+    <section class="section comparison" id="compare">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">QUICK COMPARISON</div>
+          <h2>ITR-3 vs ITR-4</h2>
+        </div>
+        <p>Tap a row to highlight what matters for your situation.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-head">Requirement</div>
+        <div class="compare-head">ITR-3</div>
+        <div class="compare-head">ITR-4</div>
+
+        <button class="compare-row-label">Business / profession income</button>
+        <div class="cell yes">✓ Yes</div><div class="cell yes">✓ Yes*</div>
+
+        <button class="compare-row-label">Capital gains</button>
+        <div class="cell yes">✓ Can apply</div><div class="cell no">× Not eligible</div>
+
+        <button class="compare-row-label">More than one house property</button>
+        <div class="cell yes">✓ Can apply</div><div class="cell no">× Not eligible</div>
+
+        <button class="compare-row-label">Foreign assets / income</button>
+        <div class="cell yes">✓ Can apply</div><div class="cell no">× Not eligible</div>
+
+        <button class="compare-row-label">Presumptive taxation</button>
+        <div class="cell yes">✓ Covered</div><div class="cell yes">✓ Core use</div>
+      </div>
+      <p class="disclaimer">*Eligibility depends on the detailed conditions applicable to the taxpayer and the relevant section. This website is an informational presentation, not a substitute for professional tax advice.</p>
+    </section>
+
+    <section class="section checklist-section">
+      <div class="checklist-card">
+        <div class="section-kicker">FILING READINESS</div>
+        <h2>Quick pre-filing checklist</h2>
+        <p>Tick items as you prepare your return.</p>
+        <label><input type="checkbox"> PAN / Aadhaar details ready</label>
+        <label><input type="checkbox"> Form 16 / income records collected</label>
+        <label><input type="checkbox"> Bank, interest & dividend statements checked</label>
+        <label><input type="checkbox"> Business / profession records reviewed</label>
+        <label><input type="checkbox"> Capital gains and property details checked</label>
+        <label><input type="checkbox"> Foreign asset / income disclosures reviewed, if applicable</label>
+        <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+        <span id="progressText">0% complete</span>
+      </div>
+
+      <div class="warning-card">
+        <div class="warning-icon">!</div>
+        <div>
+          <h3>Important note</h3>
+          <p>Companies have a different due date. The 31 August 2026 date displayed here is not applicable to companies.</p>
+          <p class="mini">If you're unsure which return applies to you, speak with a Chartered Accountant before filing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div>
+        <div class="section-kicker">READY TO FILE?</div>
+        <h2>File accurately. File on time.</h2>
+        <p>Tax • Compliance • Advisory</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn primary" href="tel:+918975333401">Call 8975333401</a>
+        <a class="btn light" href="mailto:ca.omkarkharade@gmail.com">Email CA</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div>
+      <strong>Omkar Kharade & Co.</strong>
+      <span>CHARTERED ACCOUNTANTS</span>
     </div>
+    <div class="footer-contact">
+      <a href="tel:+918975333401">☎ 8975333401</a>
+      <a href="mailto:ca.omkarkharade@gmail.com">✉ ca.omkarkharade@gmail.com</a>
+    </div>
+    <div class="footer-bottom">Timely Filing <b>•</b> Peace of Mind <b>•</b> Financial Discipline</div>
+  </footer>
 
-    <script>
-      // Logo Path Base Folder
-      const LOGO_BASE_PATH = "/images/logos/";
-
-      const targetCodes = new Set([
-        "301",
-        "302",
-        "303",
-        "304",
-        "305",
-        "306",
-        "307",
-        "308",
-        "309",
-        "310",
-        "311",
-        "313",
-        "314",
-        "315",
-        "316",
-        "317",
-        "318",
-        "319",
-        "320",
-        "321",
-        "322",
-        "323",
-        "324",
-        "325",
-        "326",
-        "327",
-        "420",
-        "424",
-        "201",
-        "202",
-        "203",
-        "204",
-        "205",
-        "206",
-        "207",
-        "208",
-        "209",
-        "210",
-        "211",
-        "212",
-        "213",
-        "214",
-        "215",
-        "216",
-        "217",
-        "218",
-        "219",
-        "220",
-        "221",
-        "222",
-        "223",
-        "224",
-        "225",
-        "226",
-        "227",
-        "228",
-        "229",
-        "230",
-        "231",
-      ]);
-
-      const fallbackLogo = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="%2394a3b8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.5M4.5 21V10.5" /></svg>`;
-
-      let aggregatedInstitutes = new Map();
-
-      async function loadCSABData() {
-        const statusMsg = document.getElementById("statusMessage");
-        try {
-          const response = await fetch("csabdetails.json");
-          if (!response.ok)
-            throw new Error(`HTTP error! status: ${response.status}`);
-
-          const rawData = await response.json();
-          processCSABData(rawData);
-
-          statusMsg.style.display = "none";
-          renderCards(Array.from(aggregatedInstitutes.values()));
-        } catch (error) {
-          console.error("Error loading JSON:", error);
-          statusMsg.innerText =
-            "Error loading CSAB details JSON file. Make sure 'csabdetails.json' exists in your folder.";
-        }
-      }
-
-      function processCSABData(data) {
-        data.forEach((item) => {
-          const code = String(item["Institute Code"]).trim();
-          const quota = String(item["Quota"]).trim().toUpperCase();
-
-          // INCLUDES: HS (Home State), OS (Other State), and AI (All India for IIITs)
-          if (
-            targetCodes.has(code) &&
-            (quota === "HS" || quota === "OS" || quota === "AI")
-          ) {
-            if (!aggregatedInstitutes.has(code)) {
-              aggregatedInstitutes.set(code, {
-                code: code,
-                name: item["Institute Name"],
-                totalVacancies: 0,
-                quotaData: {
-                  HS: {},
-                  OS: {},
-                  AI: {},
-                },
-              });
-            }
-
-            const inst = aggregatedInstitutes.get(code);
-            const vacancy = parseInt(item["Vacancy"], 10) || 0;
-            const branch = item["Program Name"];
-            const pool =
-              item["Seat Pool"] || item["Gender"] || "Gender-Neutral";
-            const category = item["Category"];
-
-            inst.totalVacancies += vacancy;
-
-            // Grouping structure: Quota -> Branch -> Pool -> Category
-            if (!inst.quotaData[quota][branch]) {
-              inst.quotaData[quota][branch] = {};
-            }
-            if (!inst.quotaData[quota][branch][pool]) {
-              inst.quotaData[quota][branch][pool] = {};
-            }
-            if (!inst.quotaData[quota][branch][pool][category]) {
-              inst.quotaData[quota][branch][pool][category] = 0;
-            }
-
-            inst.quotaData[quota][branch][pool][category] += vacancy;
-          }
-        });
-      }
-
-      function renderCards(institutes) {
-        const grid = document.getElementById("cardGrid");
-        grid.innerHTML = "";
-
-        if (institutes.length === 0) {
-          grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; color: var(--text-muted);">No matching institutes found.</div>`;
-          return;
-        }
-
-        institutes.forEach((inst) => {
-          const card = document.createElement("div");
-          card.className = "institute-card";
-          card.onclick = () => openModal(inst.code);
-
-          const logoPath = `${LOGO_BASE_PATH}${inst.code}.png`;
-
-          card.innerHTML = `
-          <div class="logo-container">
-            <img src="${logoPath}" alt="${inst.code} Logo" onerror="this.onerror=null; this.src='${fallbackLogo}';" />
-          </div>
-          <div class="card-info">
-            <span class="code-badge">CODE: ${inst.code}</span>
-            <div class="institute-name">${inst.name}</div>
-            <span class="click-hint">Click to view details ➔</span>
-          </div>
-          <div class="vacancy-box">
-            <span class="vacancy-label">Vacancies</span>
-            <span class="vacancy-count">${inst.totalVacancies}</span>
-          </div>
-        `;
-
-          grid.appendChild(card);
-        });
-      }
-
-      function openModal(code) {
-        const inst = aggregatedInstitutes.get(code);
-        if (!inst) return;
-
-        document.getElementById("modalTitle").innerText = inst.name;
-        document.getElementById("modalCode").innerText = `CODE: ${inst.code}`;
-
-        const logoImg = document.getElementById("modalLogo");
-        logoImg.src = `${LOGO_BASE_PATH}${inst.code}.png`;
-        logoImg.onerror = function () {
-          this.src = fallbackLogo;
-        };
-
-        const body = document.getElementById("modalBody");
-        body.innerHTML = "";
-
-        // 1. Home State (HS) Seats First
-        renderQuotaSection(
-          body,
-          "Home State (HS)",
-          inst.quotaData.HS,
-          "hs-title",
-        );
-
-        // 2. Other State (OS) Seats Second
-        renderQuotaSection(
-          body,
-          "Other State (OS)",
-          inst.quotaData.OS,
-          "os-title",
-        );
-
-        // 3. All India (AI) Seats (For IIITs)
-        renderQuotaSection(
-          body,
-          "All India (AI Quota)",
-          inst.quotaData.AI,
-          "ai-title",
-        );
-
-        document.getElementById("detailsModal").style.display = "flex";
-      }
-
-      function renderQuotaSection(
-        container,
-        titleText,
-        branchesObj,
-        titleClass,
-      ) {
-        const branches = Object.keys(branchesObj);
-        if (branches.length === 0) return;
-
-        const section = document.createElement("div");
-        section.className = "state-section";
-
-        let sectionHTML = `<div class="state-title ${titleClass}">${titleText}</div>`;
-
-        branches.forEach((branch) => {
-          sectionHTML += `<div class="branch-card">`;
-          sectionHTML += `<div class="branch-name">${branch}</div>`;
-
-          const poolsObj = branchesObj[branch];
-          for (const [poolName, categoriesObj] of Object.entries(poolsObj)) {
-            sectionHTML += `<div class="pool-block">`;
-            sectionHTML += `<div class="pool-title">Pool: ${poolName}</div>`;
-            sectionHTML += `<div class="category-grid">`;
-
-            for (const [cat, count] of Object.entries(categoriesObj)) {
-              sectionHTML += `
-              <div class="cat-badge">
-                <span class="cat-name">${cat}</span>
-                <span class="cat-val">${count}</span>
-              </div>
-            `;
-            }
-            sectionHTML += `</div></div>`;
-          }
-
-          sectionHTML += `</div>`;
-        });
-
-        section.innerHTML = sectionHTML;
-        container.appendChild(section);
-      }
-
-      function closeModal() {
-        document.getElementById("detailsModal").style.display = "none";
-      }
-
-      window.onclick = function (event) {
-        const modal = document.getElementById("detailsModal");
-        if (event.target === modal) {
-          closeModal();
-        }
-      };
-
-      document.getElementById("searchInput").addEventListener("input", (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        const filtered = Array.from(aggregatedInstitutes.values()).filter(
-          (inst) =>
-            inst.name.toLowerCase().includes(query) ||
-            inst.code.toLowerCase().includes(query),
-        );
-        renderCards(filtered);
-      });
-
-      window.addEventListener("DOMContentLoaded", loadCSABData);
-    </script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
